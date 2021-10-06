@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "926593200640",
+    "project_id": "map-services-326219",
+    "storage_bucket": "map-services-326219.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926593200640:android:d612141d0e4d83613c9ee5",
+        "android_client_info": {
+          "package_name": "com.example.exercisegreenroad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926593200640-iehbsqvpto4bnmc5k98qug270vmp08q5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9vF-fvLKyhdIVA23UbYF_Dcr1pM9eHwA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926593200640-iehbsqvpto4bnmc5k98qug270vmp08q5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

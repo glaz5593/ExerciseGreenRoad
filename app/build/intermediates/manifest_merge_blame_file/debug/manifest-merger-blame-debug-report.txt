@@ -1,0 +1,161 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.exercisegreenroad"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml
+10
+11    <!--
+12         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+13         Google Maps Android API v2, but you must specify either coarse or fine
+14         location permissions for the "MyLocation" functionality.
+15    -->
+16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+16-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:10:5-79
+16-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:10:22-76
+17    <uses-permission android:name="android.permission.ACCESS_LOCATION" />
+17-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:11:5-74
+17-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:11:22-71
+18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+18-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:12:5-81
+18-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:12:22-78
+19    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+19-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:13:5-85
+19-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:13:22-82
+20    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+20-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:14:5-77
+20-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:14:22-74
+21
+22    <!-- Include required permissions for Google Maps API to run. -->
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:23:5-79
+23-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:23:22-76
+24    <uses-permission android:name="android.permission.INTERNET" />
+24-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:24:5-67
+24-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:24:22-64
+25
+26    <uses-feature
+26-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:26:5-28:35
+27        android:glEsVersion="0x00020000"
+27-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:27:9-41
+28        android:required="true" />
+28-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:28:9-32
+29
+30    <queries>
+30-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:30:5-34:15
+31
+32        <!-- Needs to be explicitly declared on Android R+ -->
+33        <package android:name="com.google.android.apps.maps" />
+33-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:33:9-64
+33-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:33:18-61
+34    </queries>
+35
+36    <application
+36-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:16:5-60:19
+37        android:name="com.example.exercisegreenroad.device.AppBase"
+37-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:17:9-39
+38        android:allowBackup="true"
+38-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:18:9-35
+39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+39-->[androidx.core:core:1.5.0] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\07adfc08fe16d3453ab9291511ec05fe\core-1.5.0\AndroidManifest.xml:24:18-86
+40        android:debuggable="true"
+41        android:icon="@mipmap/ic_launcher"
+41-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:19:9-43
+42        android:label="@string/app_name"
+42-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:20:9-41
+43        android:roundIcon="@mipmap/ic_launcher_round"
+43-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:21:9-54
+44        android:supportsRtl="true"
+44-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:22:9-35
+45        android:testOnly="true"
+46        android:theme="@style/Theme.ExerciseGreenRoad" >
+46-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:23:9-55
+47
+48        <!--
+49             TODO: Before you run your application, you need a Google Maps API key.
+50
+51             To get one, follow the directions here:
+52
+53                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+54
+55             Once you have your API key (it starts with "AIza"), define a new property in your
+56             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+57             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+58        -->
+59        <meta-data
+59-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:36:9-38:71
+60            android:name="com.google.android.geo.API_KEY"
+60-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:37:13-58
+61            android:value="AIzaSyCrXhN23oFTCBYCMDdsR-MKOUeqhbCU7EM" />
+61-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:38:13-68
+62
+63        <activity
+63-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:40:9-48:20
+64            android:name="com.example.exercisegreenroad.ui.MapsActivity"
+64-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:41:13-44
+65            android:exported="true"
+65-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:42:13-36
+66            android:label="@string/title_activity_maps" >
+66-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:43:13-56
+67            <intent-filter>
+67-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:44:13-47:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:45:17-69
+68-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:45:25-66
+69
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:46:17-77
+70-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:46:27-74
+71            </intent-filter>
+72        </activity>
+73
+74        <service android:name="com.example.exercisegreenroad.geofencing.GeofenceService" />
+74-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:50:9-63
+74-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:50:18-60
+75
+76        <receiver
+76-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:52:9-59:20
+77            android:name="com.example.exercisegreenroad.geofencing.GeofencingBroadcastReceiver"
+77-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:53:13-67
+78            android:exported="true"
+78-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:54:13-36
+79            android:permission="com.google.android.gms.permission.ACTIVITY_RECOGNITION" >
+79-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:55:13-88
+80            <intent-filter>
+80-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:56:13-58:29
+81                <action android:name="es.jarroyo.transitionrecognitionapp.TRANSITION_RECOGNITION" />
+81-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:57:17-101
+81-->C:\Users\mosheg\AndroidStudioProjects\ExerciseGreenRoad\app\src\main\AndroidManifest.xml:57:25-98
+82            </intent-filter>
+83        </receiver>
+84        <!-- Needs to be explicitly declared on P+ -->
+85        <uses-library
+85-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:39:9-41:40
+86            android:name="org.apache.http.legacy"
+86-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:40:13-50
+87            android:required="false" />
+87-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c544b370acc98d44be3bf19062e2e0f6\play-services-maps-17.0.1\AndroidManifest.xml:41:13-37
+88
+89        <activity
+89-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
+90            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+90-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\play-services-base-17.5.0\AndroidManifest.xml:24:13-79
+91            android:exported="false"
+91-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\play-services-base-17.5.0\AndroidManifest.xml:25:13-37
+92            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+92-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\c2d84af3d0555f20e3dd99631e217ebb\play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+93
+94        <meta-data
+94-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
+95            android:name="com.google.android.gms.version"
+95-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
+96            android:value="@integer/google_play_services_version" />
+96-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\mosheg\.gradle\caches\transforms-2\files-2.1\dfe1840249491cac16d547804f1c912e\play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
+97    </application>
+98
+99</manifest>

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_maps2.xml",
+        "source": "C:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\src\\main\\res\\layout\\activity_maps2.xml"
+    },
+    {
+        "merged": "C:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_glocation_full.xml",
+        "source": "C:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\src\\main\\res\\layout\\item_glocation_full.xml"
+    },
+    {
+        "merged": "C:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_maps.xml",
+        "source": "C:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\src\\main\\res\\layout\\activity_maps.xml"
+    },
+    {
+        "merged": "C:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_glocation_point.xml",
+        "source": "C:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\src\\main\\res\\layout\\item_glocation_point.xml"
+    }
+]
