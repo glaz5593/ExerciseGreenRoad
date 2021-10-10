@@ -9,6 +9,7 @@ import com.example.exercisegreenroad.geofencing.GeofenceService;
 import com.example.exercisegreenroad.location.*;
 import com.example.exercisegreenroad.objects.GLocation;
 import com.example.exercisegreenroad.objects.LocationHistory;
+import com.example.exercisegreenroad.utils.Logger;
 import com.example.exercisegreenroad.utils.Utils;
 
 import java.util.Date;
@@ -125,11 +126,13 @@ public class AppManager {
     public boolean hasLastLocation() {
        return lastLocation!=null;
     }
+
     private class AddPointTask extends AsyncTask<Void, Void, GLocation> {
         double lat, lon;
         int type;
 
         private AddPointTask(double lat, double lon, int type) {
+            Logger.i("AddPointTask","init "+type+"   "+lat+","+lon);
             this.lat = lat;
             this.lon = lon;
             this.type = type;
@@ -145,13 +148,17 @@ public class AppManager {
                 location.lon = lon;
                 location.type = type;
                 location.description = GoogleAPIManager.getAddressString(lat, lon);
+                Logger.e("AddPointTask",lat+","+lon);
+                Logger.i("AddPointTask","address: "+location.description);
 
                 if (type==GLocation.TYPE_MAIN) {
-                   setMainPoint(location);
+                    Logger.i("AddPointTask","set main point");
+                    setMainPoint(location);
                     PreferencesManager.getInstance().saveMainPoint(location);
                 } else {
                     synchronized (historyLockObject) {
                         history.add(location);
+                        Logger.i("AddPointTask","add to history. number:"+history.locations.size());
                         PreferencesManager.getInstance().saveLocationHistory(history);
                     }
                 }
@@ -164,6 +171,7 @@ public class AppManager {
 
         @Override
         protected void onPostExecute(GLocation result) {
+            Logger.i("AddPointTask","updateUi");
             updateUI();
         }
     }
@@ -178,7 +186,7 @@ public class AppManager {
 
     private void updateUI() {
         try {
-            AppBase.getContext().sendBroadcast(new Intent(ACTION_updateUI));
+             AppBase.getContext().sendBroadcast(new Intent(ACTION_updateUI));
         } catch (Exception e) {
             e.printStackTrace();
         }

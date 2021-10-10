@@ -48,7 +48,7 @@ import java.util.Date;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener, LocationTaskListener, GLocationAdapter.GLocationAdapterListener {
     public static final int REQUEST_CODE_PERMISSIONS = 101;
 
-    boolean menuVisibility = false;
+    boolean menuVisibility = false,mainPointFocused=false;
     private GoogleMap mMap;
     BroadcastReceiver updateUiReceiver;
     BroadcastReceiver logReceiver;
@@ -304,6 +304,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 Utils.runOnUI(() -> {
                     initVisible();
                     updateMap();
+                    updateHistory();
+
+                    if(!mainPointFocused){
+                        focusOnPoint(AppManager.getInstance().getMainPoint());
+                    }
                 });
             }
         };
@@ -320,9 +325,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         if(location==null ||mMap==null){
             return;
         }
+        mainPointFocused=true;
         LatLng point = location.getPoint();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(point));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(point, 15.0f));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(point, 13.0f));
     }
 
     public void onAllowNetworkLocationClick(View view) {

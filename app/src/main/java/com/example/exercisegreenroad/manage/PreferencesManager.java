@@ -11,7 +11,7 @@ public class PreferencesManager extends PreferencesBase{
     private static PreferencesManager instance;
     public static PreferencesManager getInstance() {
         if (instance == null) {
-            instance = new PreferencesManager(AppBase.getContext(), "Pref12");
+            instance = new PreferencesManager(AppBase.getContext(), "Pref13");
         }
 
         return instance;

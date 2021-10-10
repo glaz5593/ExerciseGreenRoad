@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -68,7 +69,7 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
 
         startForeground(NOTIFICATION_STATUS_ID, buildNotification(getApplicationContext()));
 
-        Logger.i(TAG, "onCreate()");
+        Logger_i(TAG, "onCreate()");
 
         updateMainPointReceiver = new BroadcastReceiver() {
             @Override
@@ -81,7 +82,7 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        Logger.i(TAG, "onStartCommand()");
+        Logger_i(TAG, "onStartCommand()");
 
         if (!mainPointRegistered) {
             mainPointRegistered=true;
@@ -94,7 +95,7 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Logger.i(TAG, "onDestroy");
+        Logger_i(TAG, "onDestroy");
         isRunning = false;
 
         unregisterReceiver(updateMainPointReceiver);
@@ -103,8 +104,11 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
 
     private void registerMainPoint() {
         if (!AppManager.getInstance().hasMainPoint()) {
+            Logger_i(TAG, "registerMainPoint() --> has no MainPoint");
             return;
         }
+
+        Logger_i(TAG, "registerMainPoint()");
 
         if(mGeofencingClient!=null) {
             mGeofencingClient.removeGeofences(createRequestPendingIntent());
@@ -113,6 +117,8 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
     }
 
     private void addGeofence() {
+        Logger_i(TAG, "addGeofence()");
+
         GLocation location=AppManager.getInstance().getMainPoint();
         String id = location.lat + " , " + location.lon;
         Geofence geofence = new Geofence.Builder()
@@ -126,7 +132,7 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
         geofencesToAdd = new ArrayList();
         geofencesToAdd.add(geofence);
 
-        Logger.i(TAG,"register");
+        Logger_i(TAG,"register");
         mGoogleApiClient = new GoogleApiClient.Builder(getApplicationContext())
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(this)
@@ -139,21 +145,21 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        Logger.i(TAG,"onConnected");
+        Logger_i(TAG,"onConnected");
 
         createRequestPendingIntent();
         addGeofence(0);
     }
 
     public void addGeofence(int numTry) {
-        Logger.i(TAG,"addGeofence numTry("+numTry+")");
+        Logger_i(TAG,"addGeofence numTry("+numTry+")");
 
         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
 
         if (geofencesToAdd == null || geofencesToAdd.isEmpty()) {
-            Logger.i(TAG,"addGeofence 'geofencesToAdd' is empty");
+            Logger_i(TAG,"addGeofence 'geofencesToAdd' is empty");
             return;
         }
 
@@ -162,9 +168,9 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
                     @Override
                     public void onSuccess(Void aVoid) {
                         if (geofencesToAdd != null) {
-                            Logger.i(TAG, "Registerer: " + geofencesToAdd.toString());
+                            Logger_i(TAG, "Registerer: " + geofencesToAdd.toString());
                         }else{
-                            Logger.i(TAG, "Registerer onSuccess");
+                            Logger_i(TAG, "Registerer onSuccess");
                         }
                     }
                 })
@@ -172,7 +178,8 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         if(numTry < 10) {
-                            Logger.i(TAG, "Registerer onFailure();");
+
+                            Logger_i(TAG, "Registerer onFailure();");
                             new Handler().postDelayed(() -> {
                                 addGeofence(numTry + 1);
                             }, TimeUnit.SECONDS.toMillis(5));
@@ -182,12 +189,15 @@ public class GeofenceService extends Service implements GoogleApiClient.Connecti
                 });
     }
 
+    private void Logger_i(String tag, String s) {
+        Logger.i(tag,s);
+        //Toast.makeText(AppBase.getContext(), tag+"\n"+s, Toast.LENGTH_SHORT).show();
+    }
+
     private PendingIntent createRequestPendingIntent() {
-
-            Intent intent1 = new Intent(getApplicationContext(), GeofencingBroadcastReceiver.class);
-            intent1.setAction(GeofencingBroadcastReceiver.ACTION_PROCESS_UPDATES);
-            return PendingIntent.getBroadcast(getApplicationContext(), 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
-
+        Intent intent1 = new Intent(getApplicationContext(), GeofencingBroadcastReceiver.class);
+        intent1.setAction(GeofencingBroadcastReceiver.ACTION_PROCESS_UPDATES);
+        return PendingIntent.getBroadcast(getApplicationContext(), 0, intent1, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     private GeofencingRequest getGeofencingRequest() {

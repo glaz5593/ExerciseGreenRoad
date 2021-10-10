@@ -32,13 +32,11 @@ com/example/exercisegreenroad/utils/Json.java
  com.example.exercisegreenroad.utils.Json
  com.example.exercisegreenroad.utils.Json$DateAdapter
  com.example.exercisegreenroad.utils.Json$DateDeAdapter
-com/example/exercisegreenroad/manage/PreferencesManager.java
- com.example.exercisegreenroad.manage.PreferencesManager
-com/example/exercisegreenroad/manage/AppManager.java
- com.example.exercisegreenroad.manage.AppManager
- com.example.exercisegreenroad.manage.AppManager$1
- com.example.exercisegreenroad.manage.AppManager$2
- com.example.exercisegreenroad.manage.AppManager$AddPointTask
+com/example/exercisegreenroad/objects/LocationHistory.java
+ com.example.exercisegreenroad.objects.LocationHistory
+com/example/exercisegreenroad/ui/GLocationAdapter.java
+ com.example.exercisegreenroad.ui.GLocationAdapter
+ com.example.exercisegreenroad.ui.GLocationAdapter$GLocationAdapterListener
 com/example/exercisegreenroad/ui/MapsActivity.java
  com.example.exercisegreenroad.ui.MapsActivity
  com.example.exercisegreenroad.ui.MapsActivity$1
@@ -54,8 +52,10 @@ com/example/exercisegreenroad/utils/Utils.java
  com.example.exercisegreenroad.utils.Utils$runOnUIListener
 com/example/exercisegreenroad/geofencing/GeofencingBroadcastReceiver.java
  com.example.exercisegreenroad.geofencing.GeofencingBroadcastReceiver
-com/example/exercisegreenroad/ui/GLocationAdapter.java
- com.example.exercisegreenroad.ui.GLocationAdapter
- com.example.exercisegreenroad.ui.GLocationAdapter$GLocationAdapterListener
-com/example/exercisegreenroad/objects/LocationHistory.java
- com.example.exercisegreenroad.objects.LocationHistory
+com/example/exercisegreenroad/manage/PreferencesManager.java
+ com.example.exercisegreenroad.manage.PreferencesManager
+com/example/exercisegreenroad/manage/AppManager.java
+ com.example.exercisegreenroad.manage.AppManager
+ com.example.exercisegreenroad.manage.AppManager$1
+ com.example.exercisegreenroad.manage.AppManager$2
+ com.example.exercisegreenroad.manage.AppManager$AddPointTask
