@@ -22,6 +22,7 @@ public class GLocationAdapter extends ArrayAdapter<GLocation> {
     GLocationAdapterListener listener;
     public interface GLocationAdapterListener{
         void onSelectGLocation(GLocation location);
+        void onClickGLocation();
     }
     public void setShowFullData(boolean value){
         showFullData=value;
@@ -43,17 +44,29 @@ public class GLocationAdapter extends ArrayAdapter<GLocation> {
 
         ImageView iv_type = convertView.findViewById(R.id.iv_type);
         int iconResId=R.drawable.ic_baseline_location_on_red;
+        int backgroundResId=R.drawable.oval_white;
         if(item.type==GLocation.TYPE_EXIT){
             iconResId=R.drawable.exit_arrow;
+            backgroundResId=R.drawable.oval_white_border_blue;
         }else if(item.type==GLocation.TYPE_ENTER){
             iconResId=R.drawable.enter_arrow;
+            backgroundResId=R.drawable.oval_white_border_green;
         }
         iv_type.setImageResource(iconResId);
+        iv_type.setBackgroundResource(backgroundResId);
+
+        convertView.setTag(item);
 
         if(!showFullData){
+            convertView.setOnClickListener(view -> {
+                listener.onClickGLocation();
+            });
             return convertView;
         }
 
+        convertView.setOnClickListener(view -> {
+            listener.onSelectGLocation((GLocation) view.getTag());
+        });
         TextView tv_time=convertView.findViewById(R.id.tv_time);
         tv_time.setText(Utils.getTimeOrDateTime(item.date));
         TextView tv_time2=convertView.findViewById(R.id.tv_time2);
@@ -64,10 +77,7 @@ public class GLocationAdapter extends ArrayAdapter<GLocation> {
         TextView tv_description2=convertView.findViewById(R.id.tv_description2);
         tv_description2.setText(item.description);
 
-        convertView.setTag(item);
-        convertView.setOnClickListener(view -> {
-            listener.onSelectGLocation((GLocation) view.getTag());
-        });
+
 
         return convertView;
     }

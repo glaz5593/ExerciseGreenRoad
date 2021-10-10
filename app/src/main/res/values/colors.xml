@@ -10,7 +10,7 @@
 
     <color name="transparent">#00000000</color>
 
-    <color name="main_point_radius_stroke">#604D2C88</color>
+    <color name="main_point_radius_stroke">#aa4D2C88</color>
     <color name="main_point_radius">#404D2C88</color>
     <color name="main_point">#4D2C88</color>
     <color name="exit_point">#2196F3</color>

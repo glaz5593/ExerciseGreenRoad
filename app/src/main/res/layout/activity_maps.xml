@@ -65,7 +65,7 @@
                 android:layout_marginLeft="80dp"
                 android:padding="8dp"
                 android:text="הצג לוג"
-                android:textColor="#fff"
+                android:textColor="#f77"
                 android:onClick="onToggleLog"
                 android:layout_alignParentLeft="true"
                 android:layout_height="wrap_content"/>

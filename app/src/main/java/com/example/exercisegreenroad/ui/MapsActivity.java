@@ -196,6 +196,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onSelectGLocation(GLocation location) {
         AppManager.getInstance().setMainPoint(location);
         toggleMenu();
+        updateMap();
+        focusOnPoint(AppManager.getInstance().getMainPoint());
+    }
+    @Override
+    public void onClickGLocation() {
+        toggleMenu();
     }
 
     private void updateLog() {
@@ -263,16 +269,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LocationHistory history = AppManager.getInstance().getHistory();
         for (GLocation l : history.locations) {
             if(l.type == GLocation.TYPE_ENTER) {
-                addCircle(l, 16, R.color.transparent, 3f, R.color.enter_point);
+                addCircle(l, 10, R.color.transparent, 4f, R.color.enter_point);
             }else if(l.type == GLocation.TYPE_EXIT ) {
-                addCircle(l, 16, R.color.transparent, 3f, R.color.exit_point);
+                addCircle(l, 10, R.color.transparent, 4f, R.color.exit_point);
             }
         }
 
         if (AppManager.getInstance().hasMainPoint()) {
             GLocation mainPoint = AppManager.getInstance().getMainPoint();
-            addCircle(mainPoint, GeofenceService.RADIUS_IN_METERS, R.color.main_point_radius, 1f, R.color.main_point_radius_stroke);
-            addCircle(mainPoint, 12, R.color.main_point);
+            addCircle(mainPoint, GeofenceService.RADIUS_IN_METERS, R.color.main_point_radius, 2f, R.color.main_point_radius_stroke);
+            addCircle(mainPoint, 4, R.color.main_point);
         }
 
         if(AppManager.getInstance().hasLastLocation()){
@@ -328,7 +334,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mainPointFocused=true;
         LatLng point = location.getPoint();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(point));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(point, 13.0f));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(point, 16.3f));
     }
 
     public void onAllowNetworkLocationClick(View view) {
