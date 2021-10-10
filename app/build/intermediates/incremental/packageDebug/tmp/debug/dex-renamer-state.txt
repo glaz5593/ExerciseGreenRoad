@@ -1,4 +1,0 @@
-#Wed Oct 06 03:17:56 GST 2021
-base.0=C\:\\Users\\mosheg\\AndroidStudioProjects\\ExerciseGreenRoad\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
